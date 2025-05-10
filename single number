@@ -1,0 +1,29 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        int k =0;
+      for(int num : nums) {
+    	  k ^= num; // xor is used here, a^a =0 0^b =b
+      }
+    	  
+      
+	
+	return k;
+    }
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	     Solution obj = new Solution();
+	
+		int n = sc.nextInt();
+		int [] nums = new int[n];
+		
+		for(int i =0; i<nums.length; i++) {
+			nums[i] = sc.nextInt();
+			}
+		int res = obj.singleNumber(nums);
+		System.out.print(res);
+		
+		sc.close();
+
+
+	}
+}
