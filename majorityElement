@@ -1,0 +1,32 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        
+        int k =nums.length;
+        
+       for(int i =0; i<k;i++) {
+    	   int count =0;
+    	   for(int j =0; j<k; j++) {
+    		   if(nums[j] == nums[i]) {
+    			   count++;
+    		   }
+    	   }
+    	   if(count > k/2) {
+    		   return nums[i];
+    	   }
+       }
+       return -1;
+    }
+    public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Solution obj = new Solution();
+		int n = sc.nextInt();
+		int [] nums = new int[n];
+		
+		for(int i =0; i<nums.length; i++) {
+			nums[i] = sc.nextInt();
+			}
+		int res = obj.majorityElement(nums);
+		System.out.println(res);
+	}
+
+}
